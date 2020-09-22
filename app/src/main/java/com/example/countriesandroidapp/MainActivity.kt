@@ -1,26 +1,52 @@
 package com.example.countriesandroidapp
 
+import android.app.Activity
 import android.os.Bundle
+import android.widget.ListView
+import androidx.activity.viewModels
+import androidx.annotation.VisibleForTesting
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.countriesandroidapp.network.CountriesService
+import com.example.countriesandroidapp.ui.home.CountriesListAdapter
+import com.example.countriesandroidapp.ui.home.HomeViewModel
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.components.ActivityComponent
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
+import javax.inject.Inject
+import androidx.lifecycle.Observer
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    @VisibleForTesting
+    private val homeViewModel: HomeViewModel by viewModels()
+
+    private lateinit var listView: ListView
+    private lateinit var adapter: CountriesListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        listView = countries_list_view
+
+        homeViewModel.loadCountries()
+        homeViewModel.countries.observe(this, Observer {
+            adapter.setItems(it)
+        })
+
+        adapter = CountriesListAdapter(this, arrayListOf())
+        listView.adapter = adapter
     }
 }
