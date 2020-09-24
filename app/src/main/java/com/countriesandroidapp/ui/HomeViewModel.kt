@@ -1,4 +1,4 @@
-package com.countriesandroidapp.ui.home
+package com.countriesandroidapp.ui
 
 import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject

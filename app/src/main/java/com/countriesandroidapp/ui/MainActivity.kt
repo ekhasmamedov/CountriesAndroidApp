@@ -1,16 +1,14 @@
-package com.countriesandroidapp
+package com.countriesandroidapp.ui
 
 import android.os.Bundle
 import android.widget.ListView
 import androidx.activity.viewModels
 import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
-import com.countriesandroidapp.ui.home.CountriesListAdapter
-import com.countriesandroidapp.ui.home.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import androidx.lifecycle.Observer
-import com.example.countriesandroidapp.R
+import com.countriesandroidapp.R
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
