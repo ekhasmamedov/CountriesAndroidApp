@@ -1,30 +1,16 @@
-package com.example.countriesandroidapp
+package com.countriesandroidapp
 
-import android.app.Activity
 import android.os.Bundle
 import android.widget.ListView
 import androidx.activity.viewModels
 import androidx.annotation.VisibleForTesting
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.viewModels
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.example.countriesandroidapp.network.CountriesService
-import com.example.countriesandroidapp.ui.home.CountriesListAdapter
-import com.example.countriesandroidapp.ui.home.HomeViewModel
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
+import com.countriesandroidapp.ui.home.CountriesListAdapter
+import com.countriesandroidapp.ui.home.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.components.ActivityComponent
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_home.view.*
-import javax.inject.Inject
 import androidx.lifecycle.Observer
+import com.example.countriesandroidapp.R
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

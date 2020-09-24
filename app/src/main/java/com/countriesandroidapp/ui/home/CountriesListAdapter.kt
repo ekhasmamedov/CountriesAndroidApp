@@ -1,4 +1,4 @@
-package com.example.countriesandroidapp.ui.home
+package com.countriesandroidapp.ui.home
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.example.countriesandroidapp.R
-import com.example.countriesandroidapp.models.Country
+import com.countriesandroidapp.models.Country
 
 class CountriesListAdapter(private val context: Context,
                            private var dataSource: ArrayList<Country>) : BaseAdapter() {

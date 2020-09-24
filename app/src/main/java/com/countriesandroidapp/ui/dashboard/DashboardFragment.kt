@@ -1,4 +1,4 @@
-package com.example.countriesandroidapp.ui.dashboard
+package com.countriesandroidapp.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater

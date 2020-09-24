@@ -1,18 +1,15 @@
-package com.example.countriesandroidapp.ui.home
+package com.countriesandroidapp.ui.home
 
 import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.countriesandroidapp.models.Country
-import com.example.countriesandroidapp.network.CountriesService
-import com.example.countriesandroidapp.network.NetworkModule
+import com.countriesandroidapp.models.Country
+import com.countriesandroidapp.network.CountriesService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
-import javax.inject.Inject
 import kotlin.collections.ArrayList
 
 class HomeViewModel @ViewModelInject constructor(

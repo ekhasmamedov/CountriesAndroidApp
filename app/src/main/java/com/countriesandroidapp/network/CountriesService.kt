@@ -1,6 +1,6 @@
-package com.example.countriesandroidapp.network
+package com.countriesandroidapp.network
 
-import com.example.countriesandroidapp.models.Country
+import com.countriesandroidapp.models.Country
 import io.reactivex.Observable
 import java.util.*
 import javax.inject.Inject

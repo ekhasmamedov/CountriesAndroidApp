@@ -1,4 +1,4 @@
-package com.example.countriesandroidapp.ui.notifications
+package com.countriesandroidapp.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

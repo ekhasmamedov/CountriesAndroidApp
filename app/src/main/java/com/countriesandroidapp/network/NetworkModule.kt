@@ -1,4 +1,4 @@
-package com.example.countriesandroidapp.network
+package com.countriesandroidapp.network
 
 import dagger.Module
 import dagger.Provides

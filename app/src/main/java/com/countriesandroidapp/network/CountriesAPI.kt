@@ -1,5 +1,5 @@
-package com.example.countriesandroidapp.network
-import com.example.countriesandroidapp.models.Country
+package com.countriesandroidapp.network
+import com.countriesandroidapp.models.Country
 import io.reactivex.Observable
 import retrofit2.http.GET
 
